@@ -8,7 +8,8 @@ flowchart TD
     Check -->|Нет| Invalid{Пациент согласен на платную услугу?}
     Invalid -->|Да| Paid[Оплата и приём]
     Invalid -->|Нет| Refuse[Отказ в обслуживании]
-    Valid --> End([Конец])
-    Paid --> End
+    Paid --> Receipt[Выдача чека об оплате]
+    Receipt --> End([Конец])
+    Valid --> End
     Refuse --> End
 ```
