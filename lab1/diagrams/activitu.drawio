@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36">
+  <diagram name="Страница-1" id="XWWlzWS-v6YTZwOyie6b">
+    <mxGraphModel dx="1030" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-12" edge="1" parent="1" source="O5euprq7ZUtFx-Co-pqS-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="O5euprq7ZUtFx-Co-pqS-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="&lt;div&gt;Начало&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="360" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-13" edge="1" parent="1" source="O5euprq7ZUtFx-Co-pqS-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="O5euprq7ZUtFx-Co-pqS-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-2" parent="1" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;" value="Администратор вводит номер полиса&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="330" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-10" edge="1" parent="1" source="O5euprq7ZUtFx-Co-pqS-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="O5euprq7ZUtFx-Co-pqS-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-11" connectable="0" parent="O5euprq7ZUtFx-Co-pqS-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="НЕТ&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.3356" as="geometry">
+            <mxPoint y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-15" edge="1" parent="1" source="O5euprq7ZUtFx-Co-pqS-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="O5euprq7ZUtFx-Co-pqS-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-16" connectable="0" parent="O5euprq7ZUtFx-Co-pqS-15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="ДА&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.2237" y="4" as="geometry">
+            <mxPoint y="-21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-3" parent="1" style="rhombus;" value="Полис действителен?" vertex="1">
+          <mxGeometry height="65" width="160" x="320" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Конец&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="360" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-5" parent="1" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;" value="Пациент отправляется к врачу" vertex="1">
+          <mxGeometry height="40" width="140" x="110" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-6" parent="1" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;" value="Отказ\платная услуга&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="570" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-14" edge="1" parent="1" source="O5euprq7ZUtFx-Co-pqS-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="O5euprq7ZUtFx-Co-pqS-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-7" parent="1" style="html=1;dashed=0;rounded=1;absoluteArcSize=1;arcSize=20;verticalAlign=middle;align=center;whiteSpace=wrap;" value="МИС отправляет запрос в страховую компанию" vertex="1">
+          <mxGeometry height="50" width="160" x="320" y="258" as="geometry" />
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-8" parent="O5euprq7ZUtFx-Co-pqS-7" style="text;resizeWidth=0;resizeHeight=0;points=[];part=1;verticalAlign=middle;align=center;html=1;" value="*" vertex="1">
+          <mxGeometry height="20" relative="1" width="20" x="1" y="0.5" as="geometry">
+            <mxPoint x="-20" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-17" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="O5euprq7ZUtFx-Co-pqS-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="560" />
+            </Array>
+            <mxPoint x="180" y="500" as="sourcePoint" />
+            <mxPoint x="230" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O5euprq7ZUtFx-Co-pqS-18" edge="1" parent="1" source="O5euprq7ZUtFx-Co-pqS-6" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="O5euprq7ZUtFx-Co-pqS-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="560" />
+            </Array>
+            <mxPoint x="440" y="450" as="sourcePoint" />
+            <mxPoint x="490" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
