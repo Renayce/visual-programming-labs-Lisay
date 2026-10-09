@@ -1,0 +1,145 @@
+[
+    {
+        "id": "d883c8865ee5a5de",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "19f426bb70e2c313",
+        "type": "function",
+        "z": "d883c8865ee5a5de",
+        "name": "function 11",
+        "func": "msg.payload = \"Локальный MQTT от Лисай: \" + Math.floor(Math.random() * 100);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 200,
+        "wires": [
+            [
+                "39f1731d5097a649"
+            ]
+        ]
+    },
+    {
+        "id": "b39968e1ce84a3ef",
+        "type": "inject",
+        "z": "d883c8865ee5a5de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 200,
+        "wires": [
+            [
+                "19f426bb70e2c313"
+            ]
+        ]
+    },
+    {
+        "id": "39f1731d5097a649",
+        "type": "mqtt out",
+        "z": "d883c8865ee5a5de",
+        "name": "",
+        "topic": "local/Lisai/lab2/test",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0b0f8f11a0d10697",
+        "x": 530,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c599ae7311332d46",
+        "type": "mqtt in",
+        "z": "d883c8865ee5a5de",
+        "name": "",
+        "topic": "local/Lisai/lab2/test",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0b0f8f11a0d10697",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "1693c6e1d01e1e72"
+            ]
+        ]
+    },
+    {
+        "id": "1693c6e1d01e1e72",
+        "type": "debug",
+        "z": "d883c8865ee5a5de",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "0b0f8f11a0d10697",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "host.docker.internal",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
