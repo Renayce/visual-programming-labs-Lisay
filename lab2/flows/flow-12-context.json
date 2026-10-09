@@ -1,0 +1,75 @@
+[
+    {
+        "id": "16c1ed3eccff73b5",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c6e004852090cdc3",
+        "type": "inject",
+        "z": "16c1ed3eccff73b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 240,
+        "wires": [
+            [
+                "f7fea52586067eb7"
+            ]
+        ]
+    },
+    {
+        "id": "3955d7fa9c44997b",
+        "type": "debug",
+        "z": "16c1ed3eccff73b5",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f7fea52586067eb7",
+        "type": "function",
+        "z": "16c1ed3eccff73b5",
+        "name": "function 10",
+        "func": "let count = flow.get(\"myCounter\") || 0;\n\ncount += 1;\n\nflow.set(\"myCounter\", count);\n\nmsg.payload = {\n    student: \"Лисай\",\n    counterValue: count,\n    message: \"Счётчик срабатываний: \" + count\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 240,
+        "wires": [
+            [
+                "3955d7fa9c44997b"
+            ]
+        ]
+    }
+]

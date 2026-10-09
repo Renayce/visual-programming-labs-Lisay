@@ -1,0 +1,100 @@
+[
+    {
+        "id": "c3e78dabec62300c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f892021231dcf837",
+        "type": "telegram receiver",
+        "z": "c3e78dabec62300c",
+        "name": "",
+        "bot": "5f8d2b96cf54f5ce",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "hasinput": false,
+        "inputs": 0,
+        "handleallupdates": false,
+        "handleprocessupdates": false,
+        "x": 130,
+        "y": 200,
+        "wires": [
+            [
+                "4143fec7a42e3fa5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4143fec7a42e3fa5",
+        "type": "function",
+        "z": "c3e78dabec62300c",
+        "name": "function 8",
+        "func": "const text = msg.payload.content || \"\";\nif (text === \"/start\") {\n    msg.payload.content = \"Привет! Я бот студента Лисай по Лабораторной 2.\";\n} else {\n    msg.payload.content = \"Эхо: \" + text;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "1c0d20443068c28f"
+            ]
+        ]
+    },
+    {
+        "id": "1c0d20443068c28f",
+        "type": "telegram sender",
+        "z": "c3e78dabec62300c",
+        "name": "",
+        "bot": "5f8d2b96cf54f5ce",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 530,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f8d2b96cf54f5ce",
+        "type": "telegram bot",
+        "botname": "tvl_lab2_Lisai_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": 300,
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": 6667,
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbothost": "0.0.0.0",
+        "localbotport": 8443,
+        "publicbotport": 8443,
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "baa0b7a158d87d9b",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-telegrambot": "19.0.3"
+        }
+    }
+]

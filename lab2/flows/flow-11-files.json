@@ -1,0 +1,141 @@
+[
+    {
+        "id": "3c3ae13856910e4a",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b91486b171e4cdc6",
+        "type": "inject",
+        "z": "3c3ae13856910e4a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "2f0ffda894634879"
+            ]
+        ]
+    },
+    {
+        "id": "2f0ffda894634879",
+        "type": "function",
+        "z": "3c3ae13856910e4a",
+        "name": "function 9",
+        "func": "msg.payload = \"Запись от Лисай: \" + new Date().toISOString() + \"\\n\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 180,
+        "wires": [
+            [
+                "8998e627d4f27a15"
+            ]
+        ]
+    },
+    {
+        "id": "8998e627d4f27a15",
+        "type": "file",
+        "z": "3c3ae13856910e4a",
+        "name": "",
+        "filename": "/data/lab2_output.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 540,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad33f78cfdf70cd7",
+        "type": "inject",
+        "z": "3c3ae13856910e4a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "abb1c0aee9530906"
+            ]
+        ]
+    },
+    {
+        "id": "abb1c0aee9530906",
+        "type": "file in",
+        "z": "3c3ae13856910e4a",
+        "name": "",
+        "filename": "/data/lab2_output.txt",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 380,
+        "y": 280,
+        "wires": [
+            [
+                "7667b053999e9e6a"
+            ]
+        ]
+    },
+    {
+        "id": "7667b053999e9e6a",
+        "type": "debug",
+        "z": "3c3ae13856910e4a",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 280,
+        "wires": []
+    }
+]
