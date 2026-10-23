@@ -1,0 +1,80 @@
+{
+  "name": "flow-05-http-Lisay",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "514fd27e-9686-41ae-8afe-502ed4c346f7",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "https://official-joke-api.appspot.com/random_joke",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "c9c17281-259f-4549-a390-f44552e21312",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nfor (const item of items) {\n  console.log(\"=== Шутка из API ===\");\n  console.log(\"Вступление (Setup):\", item.json.setup);\n  console.log(\"Панчлайн (Punchline):\", item.json.punchline);\n}\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "55c82fb7-01fc-497d-9a6d-ffaf6cb98511",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "d693d13d-335f-4f2a-a6d0-e20c073d35f2",
+  "meta": {
+    "instanceId": "a599851e3e5eb7d682118fd25269afc2f324247fb5d61679ad00caf191ec02a0"
+  },
+  "nodeGroups": [],
+  "id": "bQZtdVkRYNcRJ3B1",
+  "tags": []
+}
