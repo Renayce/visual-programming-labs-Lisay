@@ -1,0 +1,64 @@
+{
+  "name": "flow-06-schedule-Lisay",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 1
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8fe98868-7fb9-485a-b90f-4ba7f700a5da",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Возвращаем текущее время\nconst now = new Date();\n\nreturn [{\n  json: {\n    payload: \"Лисай\",\n    currentTime: now.toISOString(),\n    timestamp: now.getTime(),\n    message: \"Workflow выполнен по расписанию\"\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "6c5159ba-a128-44f1-9689-1e0b03ed33a7",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "2bbdf35b-1ae4-46c8-8a41-ce960af12f4e",
+  "meta": {
+    "instanceId": "a599851e3e5eb7d682118fd25269afc2f324247fb5d61679ad00caf191ec02a0"
+  },
+  "nodeGroups": [],
+  "id": "F9Fi13RFJaESIze6",
+  "tags": []
+}
