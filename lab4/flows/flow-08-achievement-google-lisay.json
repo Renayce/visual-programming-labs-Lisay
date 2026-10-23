@@ -1,0 +1,115 @@
+{
+  "name": "flow-08-achievement-google-lisay",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "filters": {
+          "sender": "alexandrlisai2201@gmail.com"
+        }
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "9e8c1a81-a4d8-4c19-9a00-c3d4845d4284",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "wCNRGRw8mXvrLuZB",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "={{ $json.fileName }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        448,
+        0
+      ],
+      "id": "7fae2843-4eb8-4605-9248-db529052c34d",
+      "name": "Upload file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "SjI6wM0b3gDmNJvv",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  const subject = item.json.subject || \"Без темы\";\n  const from = item.json.from || \"Неизвестно\";\n  const snippet = item.json.snippet || \"\";\n  const id = item.json.id || \"unknown\";\n  \n  // Формируем содержимое текстового файла\n  const fileContent = `Тема письма: ${subject}\\n\\nОт кого: ${from}\\n\\nКраткое содержание: ${snippet}\\n\\nСсылка на письмо: https://mail.google.com/mail/u/0/#inbox/${id}`;\n  \n  // Кодируем в base64 используя btoa (работает в любом JS окружении)\n  const base64Data = btoa(unescape(encodeURIComponent(fileContent)));\n  \n  results.push({\n    json: { fileName: `Email_${id}.txt` },\n    binary: {\n      data: {\n        data: base64Data,\n        mimeType: 'text/plain',\n        fileName: `Email_${id}.txt`\n      }\n    }\n  });\n}\n\nreturn results;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "2093ff3b-1b0e-4dcd-b249-5e8d45efd3e8",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "91aaeb88-8bf6-4a01-8395-3a1249c1cec1",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a599851e3e5eb7d682118fd25269afc2f324247fb5d61679ad00caf191ec02a0"
+  },
+  "nodeGroups": [],
+  "id": "IOafmwUo9szkANs4",
+  "tags": []
+}
