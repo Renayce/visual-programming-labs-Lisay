@@ -1,0 +1,77 @@
+{
+  "name": "flow-02-code-Lisay",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "5e0ef362-7030-43dd-a391-2c2cd9f61c98",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Базовые элементы JS по заданию 2.2\n\n// 1. let и const\nconst studentName = \"Лисай\"; // замени на свою фамилию\nconst groupName = \"УИР\";    // замени на свою группу\nlet score = 0;\n\n// 2. Массив\nconst subjects = [\"Математика\", \"Менеджмент\", \"Программирование\"];\n\n// 3. Объект\nconst student = {\n  name: studentName,\n  group: groupName,\n  subjects: subjects\n};\n\n// 4. Цикл for\nfor (let i = 0; i < subjects.length; i++) {\n  score += 10;\n  console.log(`Предмет ${i + 1}: ${subjects[i]}, текущий счёт: ${score}`);\n}\n\n// 5. if/else\nlet grade;\nif (score >= 30) {\n  grade = \"Отлично\";\n} else if (score >= 20) {\n  grade = \"Хорошо\";\n} else {\n  grade = \"Удовлетворительно\";\n}\n\n// Добавляем результат в payload\nconst result = {\n  payload: studentName,\n  group: groupName,\n  totalScore: score,\n  grade: grade,\n  student: student\n};\n\n// Возвращаем результат\nreturn [{ json: result }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "92ccb083-fa1f-4f5d-887c-567cf97cd8b1",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        448,
+        0
+      ],
+      "id": "923d2bc6-62ec-495e-a7c3-ee910618e900",
+      "name": "No Operation, do nothing"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "6e56efc3-8fb4-474f-9fb6-70a4695958a2",
+  "meta": {
+    "instanceId": "a599851e3e5eb7d682118fd25269afc2f324247fb5d61679ad00caf191ec02a0"
+  },
+  "nodeGroups": [],
+  "id": "fsUjMMw7SShuHqvW",
+  "tags": []
+}
