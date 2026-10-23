@@ -1,0 +1,96 @@
+{
+  "name": "flow-09-redis-set-get-Lisay",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e06d55d2-36c7-48cb-b4b2-5cf212fb9bf9",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "Lisay",
+        "value": "Test value from n8n lab4"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "934b5fcf-5299-4851-a133-d050f0073803",
+      "name": "Redis",
+      "credentials": {
+        "redis": {
+          "id": "2npguLdhFAPF6oyL",
+          "name": "Redis LAB4"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "key": "Lisay",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        448,
+        0
+      ],
+      "id": "369ad9ea-dd45-4b24-af8f-01daa2692b4a",
+      "name": "Redis1",
+      "credentials": {
+        "redis": {
+          "id": "2npguLdhFAPF6oyL",
+          "name": "Redis LAB4"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Redis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis": {
+      "main": [
+        [
+          {
+            "node": "Redis1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "4e57edb9-7155-42ea-8cb6-8ecc69c10529",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a599851e3e5eb7d682118fd25269afc2f324247fb5d61679ad00caf191ec02a0"
+  },
+  "nodeGroups": [],
+  "id": "UruxGHy3MnwaTbA4",
+  "tags": []
+}
